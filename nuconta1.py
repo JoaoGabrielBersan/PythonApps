@@ -1,7 +1,8 @@
-# Input CDI anual e dinheiro na NuConta
+# Input Selic e dinheiro na NuConta
 nuconta = float(input('Quanto você tem na sua NuConta? R$'))
-cdiano = float(input('Qual é o valor do CDI? (em %)'))
-# Fórmula p o CDI diário
+selic = float(input('Quanto vale a taxa Selic? (em %) '))
+# Fórmula para o CDI anual e diário
+cdiano = (selic-0.1)
 cdidia = (((1+(cdiano/100))**(1/252)-1)*100)
 # Fórmula para o rendimento
 rendia = (nuconta*(cdidia/100))
