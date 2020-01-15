@@ -1,0 +1,18 @@
+#importing needed Python modules
+import datetime as dt
+import matplotlib.pyplot as plt
+from matplotlib import style
+import pandas as pd
+import pandas_datareader.data as web
+
+#input stock ticker
+ticker = input('What is the stock ticker for the company? ')
+
+#start and end dates
+style.use('ggplot')
+start = dt.datetime(2010,1,1)
+end = dt.datetime(2019,12,31)
+
+#output csv file for stock info
+df = web.DataReader(ticker, 'yahoo', start, end)
+df.to_csv('{}.csv' .format(ticker))
